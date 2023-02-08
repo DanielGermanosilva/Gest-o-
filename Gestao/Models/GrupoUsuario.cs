@@ -8,6 +8,7 @@ namespace Models
 {
     internal class GrupoUsuario
     {
-
+        public string? NomeGrupo { get; set; }
+        public int MyProperty { get; set; }
     }
 }
