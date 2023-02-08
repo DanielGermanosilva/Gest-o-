@@ -10,6 +10,6 @@ namespace Models
     {
 
         public string? Descricao { get; set; }
-        public string? Id { get; set; }
+        public List<GrupoUsuario> GrupoUsuarios { get; set; }
     }
 }

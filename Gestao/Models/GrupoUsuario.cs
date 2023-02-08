@@ -9,6 +9,6 @@ namespace Models
     internal class GrupoUsuario
     {
         public string? NomeGrupo { get; set; }
-        public int MyProperty { get; set; }
+        public List<Permissao> Permissoes { get; set; } 
     }
 }
