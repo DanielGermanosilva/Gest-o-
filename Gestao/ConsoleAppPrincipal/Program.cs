@@ -24,7 +24,7 @@
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Ocorreu um erro a tentar realizar a divisao   (" + ex.Message,")");
+                Console.WriteLine("Ocorreu um erro a tentar realizar a divisao  " + ex.Message);
             }
             
         }
