@@ -10,8 +10,7 @@ namespace DAL
             SqlConnection cn = new SqlConnection();
             try
             {
-                Conexao conexao = new Conexao();
-                cn.ConnectionString = conexao.StringDeConexao;
+                cn.ConnectionString = Conexao.StringDeConexao;
             }
             catch (Exception)
             {
