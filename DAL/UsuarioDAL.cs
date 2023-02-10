@@ -1,4 +1,5 @@
 ﻿using Models;
+using System.Data.SqlClient;
 
 namespace DAL
 {
@@ -6,7 +7,18 @@ namespace DAL
     {
         public void inserir(Usuario _usuario)
         {
+            SqlConnection cn = new SqlConnection();
+        }
+        public Usuario Buscar(string _nomeusuario)
+        {
 
         }
+        public void Alterar(Usuario _usuario)
+        {
+
+        }
+        public void Excluir(int _id)
+
+
     }
 }
