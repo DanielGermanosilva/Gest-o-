@@ -11,6 +11,8 @@ namespace DAL
             try
             {
                 cn.ConnectionString = Conexao.StringDeConexao;
+                SqlCommand cmd = new SqlCommand();
+
             }
             catch (Exception)
             {
