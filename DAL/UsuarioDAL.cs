@@ -12,7 +12,9 @@ namespace DAL
             {
                 cn.ConnectionString = Conexao.StringDeConexao;
                 SqlCommand cmd = new SqlCommand();
-
+                cmd.Connection = cn;
+                cmd.CommandText = "insert into Usuario (nome, NomeUsuario, cpf, Email, Senha, Ativo) " +
+                                   "values (@nome, @nomeusuario, @cpf, @email, @senha, @ativo)";
             }
             catch (Exception)
             {
