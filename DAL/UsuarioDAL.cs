@@ -13,12 +13,20 @@ namespace DAL
                 cn.ConnectionString = Conexao.StringDeConexao;
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "insert into Usuario (nome, NomeUsuario, cpf, Email, Senha, Ativo) " +
-                                   "values (@nome, @nomeusuario, @cpf, @email, @senha, @ativo)";
+                cmd.CommandText = "insert into Usuario (Nome, NomeUsuario, Cpf, Email, Senha, Ativo) " +
+                                   "values (@Nome, @NomeUsuario, @Cpf, @Email, @Senha, @Ativo)";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@Nome", _usuario.Nome);
+                cmd.Parameters.AddWithValue("@NomeUsuario", _usuario.NomeUsuario);
+                cmd.Parameters.AddWithValue("@Cpf", _usuario.Email);
+                cmd.Parameters.AddWithValue("@Senha", _usuario.Senha);
+                cmd.Parameters.AddWithValue("@Ativo",_usuario.Ativo);
+                cn.Open();
+                cmd.ExecuteScalar();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                throw new Exception("Ocorreu um erro ao tentar inserir um usuario no banco: " + ex.Message);
             }
             finally
             {
