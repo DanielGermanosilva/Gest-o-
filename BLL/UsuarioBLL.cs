@@ -1,4 +1,5 @@
-﻿using Models
+﻿using Models;
+namespace BLL
 {
     public class UsuarioBLL
     {
