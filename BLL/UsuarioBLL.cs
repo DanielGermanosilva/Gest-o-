@@ -10,7 +10,7 @@ namespace BLL
 
         public Usuario Buscar(string _nomeUsuario)
         {
-
+            throw new NotImplementedException();
         }
         public void Alterar(Usuario _usuario)
         {
