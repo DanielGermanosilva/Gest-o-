@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using DAL;
+using Models;
 namespace BLL
 {
     public class UsuarioBLL
@@ -26,6 +27,11 @@ namespace BLL
             {
                 throw new Exception("Nao e permitido numeros sequenciais");
             }
+
+            UsuarioDAL usuarioDAL = new UsuarioDAL();
+            usuarioDAL.Inserir(_usuario);
+           
+
         }
         public Usuario Buscar(string _nomeUsuario)
         {
