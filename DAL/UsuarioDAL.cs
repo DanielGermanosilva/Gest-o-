@@ -5,7 +5,7 @@ namespace DAL
 {
     public class UsuarioDAL
     {
-        public void inserir(Usuario _usuario)
+        public void Inserir(Usuario _usuario)
         {
             SqlConnection cn = new SqlConnection();
             try
