@@ -5,7 +5,7 @@ namespace BLL
     {
         public void Inserir(Usuario _usuario)
         {
-            if (_usuario.NomeUsuario.Length <= 3)
+            if (_usuario.NomeUsuario.Length <= 3 || _usuario.NomeUsuario.Length >= 50)
             {
                 throw new Exception("Nome de Usuario deve ter mais de 3 caracteres");
             }
@@ -21,6 +21,10 @@ namespace BLL
             if (_usuario.NomeUsuario.Contains(" "))
             {
                 throw new Exception("Usuario nao pode conter espaco");
+            }
+            if (_usuario.Senha.Contains("1234567"))
+            {
+                throw new Exception("Nao e permitido numeros sequenciais");
             }
         }
         public Usuario Buscar(string _nomeUsuario)
