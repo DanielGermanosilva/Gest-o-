@@ -21,9 +21,9 @@ public class Program
             UsuarioBLL usuarioBll = new UsuarioBLL();
             usuarioBll.Inserir(usuario);
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            throw;
+           Console.WriteLine(ex.Message);
         }
     }
 }
