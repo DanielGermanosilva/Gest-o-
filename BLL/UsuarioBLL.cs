@@ -5,19 +5,24 @@ namespace BLL
     {
         public void Inserir(Usuario _usuario)
         {
-            if (_usuario,NomeUsuario.Lenght <= 3){
+            if (_usuario.NomeUsuario.Length <= 3)
+            {
                 throw new Exception("Nome de Usuario deve ter mais de 3 caracteres");
-
-                // todo: validar se a senha nao é 1234
-                if (_usuario.Senha == "1234")
-                {
-                    throw new Exception("A senha nao pode ser 1234");
-                }
-                // todo: validar se ja existe um usuario com este nome.
-
+            }
+            if (_usuario.Senha == "1234")
+            {
+                throw new Exception("A senha nao pode ser 1234");
+            }
+            if (_usuario.Senha.Length < 7 || _usuario.Senha.Length > 11)
+            {
+                throw new Exception("A senha deve ter entre 7 e 11 caracteres");
+            }
+            // todo: validar se ja existe um usuario com este nome.
+            if (_usuario.NomeUsuario.Contains(" "))
+            {
+                throw new Exception("Usuario nao pode conter espaco");
             }
         }
-
         public Usuario Buscar(string _nomeUsuario)
         {
             throw new NotImplementedException();
@@ -26,7 +31,7 @@ namespace BLL
         {
 
         }
-        public void Excluir(int)
+        public void Excluir(int _id)
         {
 
         }

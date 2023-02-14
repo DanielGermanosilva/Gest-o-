@@ -35,13 +35,16 @@ namespace DAL
         }
         public Usuario Buscar(string _nomeusuario)
         {
-
+            return new Usuario();
         }
         public void Alterar(Usuario _usuario)
         {
 
         }
         public void Excluir(int _id)
+        {
+
+        }
 
 
     }
