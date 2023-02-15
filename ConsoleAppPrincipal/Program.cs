@@ -41,8 +41,8 @@ public class Program
                 Console.WriteLine("Crie Uma Senha: ");
                 usuario.Senha = Console.ReadLine();
                 //   usuario.Senha = "10203055555";
-
-                usuario.Ativo = true;
+                Console.WriteLine("Usuario Está Ativo? (S) OU (N) : ");
+                usuario.Ativo = Console.ReadLine().ToUpper() == "S";
 
                 usuarioBll.Inserir(usuario);
                 Console.WriteLine("\n\nUsuario Registrado Com Sucesso!!!\n\n\n" + "Deseja Criar Mais Um Usuario? ");
