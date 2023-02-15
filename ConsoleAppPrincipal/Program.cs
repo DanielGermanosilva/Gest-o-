@@ -22,30 +22,30 @@ public class Program
             do
             {
                
-                Console.WriteLine("Digite Seu Nome: ");
+                Console.Write("Digite Seu Nome: ");
                 usuario.Nome = Console.ReadLine();
                 //  usuario.Nome = "Daniel Germano";
 
-                Console.WriteLine("Crie um Nome de Usuario: ");
+                Console.Write("Crie um Nome de Usuario: ");
                 usuario.NomeUsuario = Console.ReadLine();
                 // usuario.NomeUsuario = "DJ5555";
 
-                Console.WriteLine("Digite Seu Email: ");
+                Console.Write("Digite Seu Email: ");
                 usuario.Email = Console.ReadLine();
                 //  usuario.Email = "ddger2018@gmail.com";
 
-                Console.WriteLine("Digite Seu CPF: ");
+                Console.Write("Digite Seu CPF: ");
                 usuario.CPF = Console.ReadLine();
                 //  usuario.CPF = "458.158.442-88";
 
-                Console.WriteLine("Crie Uma Senha: ");
+                Console.Write("Crie Uma Senha: ");
                 usuario.Senha = Console.ReadLine();
                 //   usuario.Senha = "10203055555";
-                Console.WriteLine("Usuario Está Ativo? \n(S) OU (N) : ");
+                Console.Write("Usuario Está Ativo? \n(S) OU (N) : ");
                 usuario.Ativo = Console.ReadLine().ToUpper() == "S";
 
                 usuarioBll.Inserir(usuario);
-                Console.WriteLine("\n\nUsuario Registrado Com Sucesso!!!\n\n\n" + "Deseja Criar Mais Um Usuario? \n(S) OU (N) : ");
+                Console.Write("\n\nUsuario Registrado Com Sucesso!!!\n\n\n" + "Deseja Criar Mais Um Usuario? \n(S) OU (N) : ");
                 opc = Console.ReadLine().ToUpper()== "S";
                 Console.Clear();
 
