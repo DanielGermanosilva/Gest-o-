@@ -18,7 +18,7 @@ public class Program
 
             UsuarioBLL usuarioBll = new UsuarioBLL();
 
-           string opc;
+           bool opc;
             do
             {
                
@@ -41,15 +41,15 @@ public class Program
                 Console.WriteLine("Crie Uma Senha: ");
                 usuario.Senha = Console.ReadLine();
                 //   usuario.Senha = "10203055555";
-                Console.WriteLine("Usuario Está Ativo? (S) OU (N) : ");
+                Console.WriteLine("Usuario Está Ativo? \n(S) OU (N) : ");
                 usuario.Ativo = Console.ReadLine().ToUpper() == "S";
 
                 usuarioBll.Inserir(usuario);
-                Console.WriteLine("\n\nUsuario Registrado Com Sucesso!!!\n\n\n" + "Deseja Criar Mais Um Usuario? ");
-                opc = Console.ReadLine();
+                Console.WriteLine("\n\nUsuario Registrado Com Sucesso!!!\n\n\n" + "Deseja Criar Mais Um Usuario? \n(S) OU (N) : ");
+                opc = Console.ReadLine().ToUpper()== "S";
                 Console.Clear();
 
-            } while (opc == "sim");
+            } while (opc == true);
 
 
         }
