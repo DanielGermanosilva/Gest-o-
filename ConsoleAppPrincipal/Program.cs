@@ -18,9 +18,10 @@ public class Program
 
             UsuarioBLL usuarioBll = new UsuarioBLL();
 
-            string opc;
+           string opc;
             do
             {
+               
                 Console.WriteLine("Digite Seu Nome: ");
                 usuario.Nome = Console.ReadLine();
                 //  usuario.Nome = "Daniel Germano";
