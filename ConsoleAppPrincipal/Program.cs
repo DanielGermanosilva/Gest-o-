@@ -11,7 +11,7 @@ public class Program
 
     private static void Main(string[] args)
     {
-
+        // Cadastro de Usuario
         try
         {
             Usuario usuario = new Usuario();
@@ -57,5 +57,6 @@ public class Program
         {
             Console.WriteLine(ex.Message);
         }
+        // --------------------
     }
 }
