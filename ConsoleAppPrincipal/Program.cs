@@ -11,17 +11,29 @@ public class Program
 
     private static void Main(string[] args)
     {
-        Console.WriteLine("--------------- GESTAO PROJECT------------"):
+        Console.WriteLine("--------------- GESTAO PROJECT------------");
         Console.WriteLine("[1] Usuarios");
         Console.WriteLine("[2] Grupos De Usuarios");
-        Console.WriteLine("[3] Permiçoes");
+        Console.WriteLine("[3] Permissoes");
 
 
 
+        Console.WriteLine("=== Usuarios ===");
+        Console.WriteLine("[1] Criar Usuario");
+        Console.WriteLine("[2] Buscar Usuario");
+        Console.WriteLine("[3] Excluir Usuario");
 
 
+        Console.WriteLine("=== Permissão ===");
+        Console.WriteLine("[1] Criar Permissão");
+        Console.WriteLine("[2] Buscar Permissão");
+        Console.WriteLine("[3] Excluir Permissão");
 
 
+        Console.WriteLine("=== Grupo De Usuarios ===");
+        Console.WriteLine("[1] Criar GrupoUSER");
+        Console.WriteLine("[2] Buscar GrupoUSER");
+        Console.WriteLine("[3] Excluir GrupoUSER");
 
 
 
