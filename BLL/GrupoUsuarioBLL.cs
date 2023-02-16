@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    internal class Class1
+    public class GrupoUsuarioBLL
     {
+
+
+
     }
 }
