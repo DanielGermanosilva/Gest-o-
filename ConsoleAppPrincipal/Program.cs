@@ -11,6 +11,20 @@ public class Program
 
     private static void Main(string[] args)
     {
+        Console.WriteLine("--------------- GESTAO PROJECT------------"):
+        Console.WriteLine("[1] Usuarios");
+        Console.WriteLine("[2] Grupos De Usuarios");
+        Console.WriteLine("[3] Permiçoes");
+
+
+
+
+
+
+
+
+
+
         // Cadastro de Usuario
         try
         {
@@ -18,10 +32,10 @@ public class Program
 
             UsuarioBLL usuarioBll = new UsuarioBLL();
 
-           bool opc;
+            bool opc;
             do
             {
-               
+
                 Console.Write("Digite Seu Nome: ");
                 usuario.Nome = Console.ReadLine();
                 //  usuario.Nome = "Daniel Germano";
@@ -46,7 +60,7 @@ public class Program
 
                 usuarioBll.Inserir(usuario);
                 Console.Write("\n\nUsuario Registrado Com Sucesso!!!\n\n\n" + "Deseja Criar Mais Um Usuario? \n(S) OU (N) : ");
-                opc = Console.ReadLine().ToUpper()== "S";
+                opc = Console.ReadLine().ToUpper() == "S";
                 Console.Clear();
 
             } while (opc == true);
