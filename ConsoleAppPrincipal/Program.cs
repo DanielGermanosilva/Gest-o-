@@ -27,11 +27,11 @@ public class Program
                 //  usuario.Nome = "Daniel Germano";
 
                 Console.Write("Crie um Nome de Usuario: ");
-                usuario.NomeUsuario = Console.ReadLine();
+                usuario.NomeUsuario = Console.ReadLine().ToLower();
                 // usuario.NomeUsuario = "DJ5555";
 
                 Console.Write("Digite Seu Email: ");
-                usuario.Email = Console.ReadLine();
+                usuario.Email = Console.ReadLine().ToLower();
                 //  usuario.Email = "ddger2018@gmail.com";
 
                 Console.Write("Digite Seu CPF: ");
