@@ -10,7 +10,6 @@ namespace BLL
 {
     public class PermissaoBLL
     {
-
         public void Inserir(Permissao _permissao)
         {
             if (_permissao.Descricao.Length <= 3 || _permissao.Descricao.Length >= 50)
