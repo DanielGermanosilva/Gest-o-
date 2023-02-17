@@ -56,12 +56,12 @@ public class Program
             bool opc;
             do
             {
-                Console.Write("Descreva a Permissao: ");
+                Console.Write("Nome do Grupo: ");
                 grupousuario.NomeGrupo = Console.ReadLine();
                 //  usuario.Nome = "Daniel Germano";
                 grupousuarioBll.Inserir(grupousuario);
 
-                Console.Write("\n\nPermissao Registrada Com Sucesso!!!\n\n\n" + "Deseja Criar Mais Um Grupo de Usuario? \n(S) OU (N) : ");
+                Console.Write("\n\nGrupo Registrado Com Sucesso!!!\n\n\n" + "Deseja Criar Mais Um Grupo de Usuario? \n(S) OU (N) : ");
                 opc = Console.ReadLine().ToUpper() == "S";
                 Console.Clear();
 

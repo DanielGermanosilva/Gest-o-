@@ -12,7 +12,7 @@ namespace BLL
     {
         public void Inserir(GrupoUsuario _grupousuario)
         {
-            if (_grupousuario.NomeGrupo.Length <= 3 || _grupousuario.NomeGrupo.Length >= 50)
+            if (_grupousuario.NomeGrupo.Length <= 2 || _grupousuario.NomeGrupo.Length >= 50)
             {
                 throw new Exception("Nome do Grupo deve ter mais de 3 caracteres");
             }
