@@ -1,4 +1,5 @@
 ﻿using BLL;
+using DAL;
 using Models;
 using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
@@ -11,6 +12,16 @@ public class Program
 
     private static void Main(string[] args)
     {
+
+
+
+
+
+
+
+
+
+        /*
         Console.WriteLine("--------------- GESTAO PROJECT------------");
         Console.WriteLine("[1] Usuarios");
         Console.WriteLine("[2] Grupos De Usuarios");
@@ -34,10 +45,38 @@ public class Program
         Console.WriteLine("[1] Criar GrupoUSER");
         Console.WriteLine("[2] Buscar GrupoUSER");
         Console.WriteLine("[3] Excluir GrupoUSER");
+        */
 
 
+         try
+        {
+            Permissao permissao = new Permissao();
 
+            PermissaoBLL permissaoBll = new PermissaoBLL();
+
+            bool opc;
+            do
+            {
+                Console.Write("Descreva a Permissao: ");
+                permissao.Descricao = Console.ReadLine();
+                //  usuario.Nome = "Daniel Germano";
+                permissaoBll.Inserir(permissao);
+
+                Console.Write("\n\nPermissao Registrada Com Sucesso!!!\n\n\n" + "Deseja Criar Mais Uma Permissao? \n(S) OU (N) : ");
+                opc = Console.ReadLine().ToUpper() == "S";
+                Console.Clear();
+
+            } while (opc == true);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+  
+        
+        /*
         // Cadastro de Usuario
+        
         try
         {
             Usuario usuario = new Usuario();
@@ -71,6 +110,7 @@ public class Program
                 usuario.Ativo = Console.ReadLine().ToUpper() == "S";
 
                 usuarioBll.Inserir(usuario);
+
                 Console.Write("\n\nUsuario Registrado Com Sucesso!!!\n\n\n" + "Deseja Criar Mais Um Usuario? \n(S) OU (N) : ");
                 opc = Console.ReadLine().ToUpper() == "S";
                 Console.Clear();
@@ -83,6 +123,7 @@ public class Program
         {
             Console.WriteLine(ex.Message);
         }
+       // */
         // --------------------
     }
 }
