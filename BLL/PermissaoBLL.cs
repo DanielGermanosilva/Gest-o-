@@ -14,7 +14,7 @@ namespace BLL
         {
             if (_permissao.Descricao.Length <= 3 || _permissao.Descricao.Length >= 50)
             {
-                throw new Exception("Nome de Usuario deve ter mais de 3 caracteres");
+                throw new Exception("Nome de Permissao deve ter mais de 3 caracteres");
             }
             PermissaoDAL permissaoDAL = new PermissaoDAL();
             permissaoDAL.Inserir(_permissao);
