@@ -17,17 +17,20 @@ public class Program
 
 
 
+        int opcmain;
 
+        do
+        {
 
+      
 
-
-        /*
         Console.WriteLine("--------------- GESTAO PROJECT------------");
         Console.WriteLine("[1] Usuarios");
         Console.WriteLine("[2] Grupos De Usuarios");
         Console.WriteLine("[3] Permissoes");
+        Console.Write("Escolha: ");
 
-
+        opcmain = Convert.ToInt32(Console.ReadLine());
 
         Console.WriteLine("=== Usuarios ===");
         Console.WriteLine("[1] Criar Usuario");
@@ -45,8 +48,25 @@ public class Program
         Console.WriteLine("[1] Criar GrupoUSER");
         Console.WriteLine("[2] Buscar GrupoUSER");
         Console.WriteLine("[3] Excluir GrupoUSER");
-        */
 
+
+        CriarUsuario();
+        CriarPermissao();
+        CriarGrupoUsuario();
+
+
+        }
+
+    }
+
+
+
+
+
+
+
+    private static void CriarGrupoUsuario()
+    {
         try
         {
             GrupoUsuario grupousuario = new GrupoUsuario();
@@ -71,14 +91,11 @@ public class Program
         {
             Console.WriteLine(ex.Message);
         }
+    }
 
-
-
-
-
-        /*
-        // cadastro de permissao
-         try
+    private static void CriarPermissao()
+    {
+        try
         {
             Permissao permissao = new Permissao();
 
@@ -102,14 +119,12 @@ public class Program
         {
             Console.WriteLine(ex.Message);
         }
-  
-        // */
+    }
 
-
-
-        /*
+    private static void CriarUsuario()
+    {
         // Cadastro de Usuario
-        
+
         try
         {
             Usuario usuario = new Usuario();
@@ -156,7 +171,8 @@ public class Program
         {
             Console.WriteLine(ex.Message);
         }
-       // */
-        // --------------------
+
+
+
     }
 }
