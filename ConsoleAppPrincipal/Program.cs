@@ -47,7 +47,37 @@ public class Program
         Console.WriteLine("[3] Excluir GrupoUSER");
         */
 
+        try
+        {
+            GrupoUsuario grupousuario = new GrupoUsuario();
 
+            GrupoUsuarioBLL grupousuarioBll = new GrupoUsuarioBLL();
+
+            bool opc;
+            do
+            {
+                Console.Write("Descreva a Permissao: ");
+                grupousuario.NomeGrupo = Console.ReadLine();
+                //  usuario.Nome = "Daniel Germano";
+                grupousuarioBll.Inserir(grupousuario);
+
+                Console.Write("\n\nPermissao Registrada Com Sucesso!!!\n\n\n" + "Deseja Criar Mais Um Grupo de Usuario? \n(S) OU (N) : ");
+                opc = Console.ReadLine().ToUpper() == "S";
+                Console.Clear();
+
+            } while (opc == true);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+
+
+
+
+
+        /*
+        // cadastro de permissao
          try
         {
             Permissao permissao = new Permissao();
@@ -73,7 +103,10 @@ public class Program
             Console.WriteLine(ex.Message);
         }
   
-        
+        // */
+
+
+
         /*
         // Cadastro de Usuario
         
