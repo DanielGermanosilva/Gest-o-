@@ -22,48 +22,121 @@ public class Program
         do
         {
 
-      
+            Console.Clear();
 
-        Console.WriteLine("--------------- GESTAO PROJECT------------");
-        Console.WriteLine("[1] Usuarios");
-        Console.WriteLine("[2] Grupos De Usuarios");
-        Console.WriteLine("[3] Permissoes");
-        Console.Write("Escolha: ");
+            Console.WriteLine("--------------- GESTAO PROJECT------------");
+            Console.WriteLine("[1] Usuarios");
+            Console.WriteLine("[2] Grupos De Usuarios");
+            Console.WriteLine("[3] Permissoes");
+            Console.Write("Escolha: ");
 
-        opcmain = Convert.ToInt32(Console.ReadLine());
+            opcmain = Convert.ToInt32(Console.ReadLine());
 
-        Console.WriteLine("=== Usuarios ===");
-        Console.WriteLine("[1] Criar Usuario");
-        Console.WriteLine("[2] Buscar Usuario");
-        Console.WriteLine("[3] Excluir Usuario");
+            switch (opcmain)
+            {
+                case 1:
+                    USUARIOS();
+                    break;
+                case 2:
+                    GRUPOUSUARIOS();
+                    break;
+                case 3:
+                    PERMISSAO();
+                    Console.Clear();
+                    Console.WriteLine("=== Permissão ===");
+                    Console.WriteLine("[1] Criar Permissão");
+                    Console.WriteLine("[2] Buscar Permissão");
+                    Console.WriteLine("[3] Excluir Permissão");
+                    break;
+                default:
+                    Console.WriteLine("Opção Invalida");
+                    Console.ReadLine();
+                    break;
+            }
 
 
-        Console.WriteLine("=== Permissão ===");
-        Console.WriteLine("[1] Criar Permissão");
-        Console.WriteLine("[2] Buscar Permissão");
-        Console.WriteLine("[3] Excluir Permissão");
 
 
+
+
+
+
+
+
+
+
+
+
+
+            CriarPermissao();
+
+
+
+        } while (true);
+
+    }
+
+    private static void PERMISSAO()
+    {
+        throw new NotImplementedException();
+    }
+
+    private static void GRUPOUSUARIOS()
+    {
+        int opcgrupuser;
+        Console.Clear();
         Console.WriteLine("=== Grupo De Usuarios ===");
         Console.WriteLine("[1] Criar GrupoUSER");
         Console.WriteLine("[2] Buscar GrupoUSER");
         Console.WriteLine("[3] Excluir GrupoUSER");
+        Console.Write("Escolha: ");
+        opcgrupuser = Convert.ToInt32(Console.ReadLine());
+        switch (opcgrupuser)
+        {
+            case 1:
+                CriarGrupoUsuario();
+                break;
+            case 2:
+                throw new NotImplementedException();
 
+            case 3:
+                throw new NotImplementedException();
 
-        CriarUsuario();
-        CriarPermissao();
-        CriarGrupoUsuario();
-
-
+            default:
+                Console.WriteLine("Opção Invalida");
+                Console.ReadLine();
+                break;
         }
 
     }
 
+    private static void USUARIOS()
+    {
+        int opcuser;
 
+        Console.Clear();
+        Console.WriteLine("=== Usuarios ===");
+        Console.WriteLine("[1] Criar Usuario");
+        Console.WriteLine("[2] Buscar Usuario");
+        Console.WriteLine("[3] Excluir Usuario");
+        Console.Write("Escolha: ");
+        opcuser = Convert.ToInt32(Console.ReadLine());
+        switch (opcuser)
+        {
+            case 1:
+                CriarUsuario();
+                break;
 
+            case 2: throw new NotImplementedException();
 
+            case 3: throw new NotImplementedException();
 
-
+            default:
+                Console.WriteLine("Opção Invalida");
+                Console.ReadLine();
+                break;
+        }
+    }
 
     private static void CriarGrupoUsuario()
     {
