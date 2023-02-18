@@ -149,7 +149,9 @@ public class Program
             cmd.Parameters.AddWithValue("@id", id);
             cn.Open();
             cmd.ExecuteScalar();
+            Console.Clear();
             Console.WriteLine("Usuario " + id + " Deletado");
+            Console.ReadLine();
         }
         catch (Exception ex)
         {
@@ -222,7 +224,7 @@ public class Program
 
     private static void CriarUsuario()
     {
-
+        Console.Clear();
         try
         {
             Usuario usuario = new Usuario();
