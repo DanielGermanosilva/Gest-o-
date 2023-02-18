@@ -1,6 +1,7 @@
 ﻿using BLL;
 using DAL;
 using Models;
+using System.Data.SqlClient;
 using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
@@ -117,7 +118,9 @@ public class Program
 
             case 2: throw new NotImplementedException();
 
-            case 3: throw new NotImplementedException();
+            case 3:
+                DeletarUsuario();
+                break ;
             case 0:
                 return;
             default:
@@ -126,6 +129,37 @@ public class Program
                 break;
         }
         return;
+    }
+
+    private static void DeletarUsuario()
+    {
+        int id;
+        Console.Clear();
+        Console.WriteLine("Digite o ID do Usuario que Deseja Excluir");
+        Console.Write("ID: ");
+        SqlConnection cn = new SqlConnection();
+        try
+        {
+            cn.ConnectionString = Conexao.StringDeConexao;
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = cn;
+            cmd.CommandText = "delete from Usuario where id = @id ";
+            id = Convert.ToInt32(Console.ReadLine());
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.Parameters.AddWithValue("@id", id);
+            cn.Open();
+            cmd.ExecuteScalar();
+            Console.WriteLine("Usuario " + id + " Deletado");
+        }
+        catch (Exception ex)
+        {
+            throw new Exception("Ocorreu um erro ao tentar deletar o usuario no banco: " + ex.Message);
+        }
+        finally
+        {
+            cn.Close();
+        }
+        return ;
     }
 
     private static void CriarGrupoUsuario()
