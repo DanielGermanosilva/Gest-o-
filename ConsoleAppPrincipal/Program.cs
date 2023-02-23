@@ -56,6 +56,10 @@ public class Program
 
     }
 
+
+
+
+    //menu usuario
     private static void PERMISSAO()
     {
 
@@ -98,6 +102,8 @@ public class Program
         return;
     }
 
+
+ 
     private static void USUARIOS()
     {
         int opcuser;
@@ -130,6 +136,14 @@ public class Program
         }
         return;
     }
+
+
+
+
+
+
+
+
 
     private static void DeletarUsuario()
     {
