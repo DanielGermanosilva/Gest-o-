@@ -71,7 +71,6 @@ public class Program
         Console.WriteLine("[0] Retornar MAIN");
         return;
     }
-
     private static void GRUPOUSUARIOS()
     {
         int opcgrupuser;
@@ -101,9 +100,6 @@ public class Program
         }
         return;
     }
-
-
- 
     private static void USUARIOS()
     {
         int opcuser;

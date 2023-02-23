@@ -43,10 +43,10 @@ namespace BLL
             return usuarioDAL.BuscarPorNomeUsuario(_nomeUsuario);
         }
 
-        public Usuario BuscarTodos()
-        {
+      //  public Usuario BuscarTodos()
+       // {
 
-        }
+       // }
         public void Alterar(Usuario _usuario)
         {
 

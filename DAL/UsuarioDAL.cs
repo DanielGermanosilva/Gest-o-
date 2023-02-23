@@ -74,7 +74,6 @@ namespace DAL
             }
             catch (Exception ex)
             {
-
                 throw new Exception("Ocorreu um erro ao tentar buscar todos os usuarios: "+ex.Message);
             }
             finally
