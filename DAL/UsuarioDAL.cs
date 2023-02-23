@@ -44,6 +44,7 @@ namespace DAL
         public List<Usuario> BuscarTodos()
         {
             List<Usuario> usuarios = new List<Usuario>();
+            Usuario usuario;
             SqlCommand cmd = new SqlCommand();
             SqlConnection cn = new SqlConnection();
             try
@@ -54,17 +55,29 @@ namespace DAL
                 cmd.CommandType = System.Data.CommandType.Text;
                 cn.Open();
 
-                using(SqlDataReader rd = cmd.ExecuteReader())
+                using (SqlDataReader rd = cmd.ExecuteReader())
                 {
+                    while (rd.Read())
+                    {
+                        usuario = new Usuario();
+                        usuario.Id = Convert.ToInt32(rd["id"]);
+                        usuario.Nome = rd["Nome"].ToString();
+                        usuario.NomeUsuario = rd["NomeUsuario"].ToString();
+                        usuario.CPF = rd["CPF"].ToString();
+                        usuario.Email = rd["Email"].ToString();
+                        usuario.Ativo = Convert.ToBoolean( rd["Ativo"]);
 
+                        usuarios.Add(usuario);
+
+                    }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw new Exception("Ocorreu um erro ao tentar buscar todos os usuarios: "+ex.Message);
             }
-            finally 
+            finally
             { cn.Close(); }
 
             return usuarios;
