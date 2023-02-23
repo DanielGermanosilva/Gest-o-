@@ -20,7 +20,7 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@Cpf", _usuario.CPF);
                 cmd.Parameters.AddWithValue("@Email", _usuario.Email);
                 cmd.Parameters.AddWithValue("@Senha", _usuario.Senha);
-                cmd.Parameters.AddWithValue("@Ativo",_usuario.Ativo);
+                cmd.Parameters.AddWithValue("@Ativo", _usuario.Ativo);
                 cn.Open();
                 cmd.ExecuteScalar();
             }
@@ -33,13 +33,41 @@ namespace DAL
                 cn.Close();
             }
         }
-        public Usuario Buscar(string _nomeusuario)
+        public Usuario BuscarPorNomeUsuario(string _nomeUsuario)
         {
             return new Usuario();
         }
         public void Alterar(Usuario _usuario)
         {
 
+        }
+        public List<Usuario> BuscarTodos()
+        {
+            List<Usuario> usuarios = new List<Usuario>();
+            SqlCommand cmd = new SqlCommand();
+            SqlConnection cn = new SqlConnection();
+            try
+            {
+                cn.ConnectionString = Conexao.StringDeConexao;
+                cmd.Connection = cn;
+                cmd.CommandText = "select top 100 id,Nome,CPF,Email,Ativo from Usuario";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cn.Open();
+
+                using(SqlDataReader rd = cmd.ExecuteReader())
+                {
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally 
+            { cn.Close(); }
+
+            return usuarios;
         }
         public void Excluir(int _id)
         {
