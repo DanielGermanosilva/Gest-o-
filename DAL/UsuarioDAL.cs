@@ -1,6 +1,8 @@
 ﻿using Models;
 using System.Data.SqlClient;
 
+
+
 namespace DAL
 {
     public class UsuarioDAL
@@ -54,7 +56,6 @@ namespace DAL
                 cmd.CommandText = "select top 100 id,Nome,CPF,Email,Ativo from Usuario";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cn.Open();
-
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
                     while (rd.Read())
@@ -66,9 +67,7 @@ namespace DAL
                         usuario.CPF = rd["CPF"].ToString();
                         usuario.Email = rd["Email"].ToString();
                         usuario.Ativo = Convert.ToBoolean( rd["Ativo"]);
-
                         usuarios.Add(usuario);
-
                     }
                 }
             }
@@ -78,7 +77,6 @@ namespace DAL
             }
             finally
             { cn.Close(); }
-
             return usuarios;
         }
         public void Excluir(int _id)

@@ -9,22 +9,13 @@ using System.Security.Cryptography.X509Certificates;
 public class Program
 {
 
-
-
     private static void Main(string[] args)
     {
 
-
-
-
-
         int opcmain;
-
         do
         {
-
             Console.Clear();
-
             Console.WriteLine("--------------- GESTAO PROJECT ------------");
             Console.WriteLine("[1] Usuarios");
             Console.WriteLine("[2] Grupos De Usuarios");
