@@ -8,23 +8,21 @@ using System.Security.Cryptography.X509Certificates;
 
 public class Program
 {
-
     private static void Main(string[] args)
     {
-
         int opcmain;
         do
         {
+            Console.Title = "Menu";
             Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("--------------- GESTAO PROJECT ------------");
             Console.WriteLine("[1] Usuarios");
-            Console.WriteLine("[2] Grupos De Usuarios");
+            Console.WriteLine("[2] Grupos Users");
             Console.WriteLine("[3] Permissoes");
             Console.WriteLine("[0] Sair");
             Console.Write("Escolha: ");
-
             opcmain = Convert.ToInt32(Console.ReadLine());
-
             switch (opcmain)
             {
                 case 1:
@@ -44,7 +42,6 @@ public class Program
                     break;
             }
         } while (opcmain != 0);
-
     }
 
 
@@ -53,15 +50,51 @@ public class Program
     //menu usuario
     private static void PERMISSAO()
     {
-
+        int opcmain;
         Console.Clear();
         Console.WriteLine("=== Permissão ===");
         Console.WriteLine("[1] Criar Permissão");
         Console.WriteLine("[2] Buscar Permissão");
         Console.WriteLine("[3] Excluir Permissão");
         Console.WriteLine("[0] Retornar MAIN");
+        opcmain = Convert.ToInt32(Console.ReadLine());
+        switch (opcmain)
+        {
+            case 1:
+                CriarPermissao();
+                break;
+            case 2:
+                BuscarPermissao();
+                break;
+            case 3:
+                DeletarPermissao();
+                break;
+            case 4:
+                BuscarTodasPermissao();
+                break;
+            default:
+                Console.WriteLine("Opção Invalida.");
+                Console.ReadLine();
+                break;
+        }
         return;
     }
+
+    private static void BuscarTodasPermissao()
+    {
+        throw new NotImplementedException();
+    }
+
+    private static void DeletarPermissao()
+    {
+        throw new NotImplementedException();
+    }
+
+    private static void BuscarPermissao()
+    {
+        throw new NotImplementedException();
+    }
+
     private static void GRUPOUSUARIOS()
     {
         int opcgrupuser;
@@ -70,6 +103,7 @@ public class Program
         Console.WriteLine("[1] Criar GrupoUSER");
         Console.WriteLine("[2] Buscar GrupoUSER");
         Console.WriteLine("[3] Excluir GrupoUSER");
+        Console.WriteLine("[4] Exibir GruposUSER");
         Console.WriteLine("[0] Retornar MAIN");
         Console.Write("Escolha: ");
         opcgrupuser = Convert.ToInt32(Console.ReadLine());
@@ -79,11 +113,14 @@ public class Program
                 CriarGrupoUsuario();
                 break;
             case 2:
-                throw new NotImplementedException();
-
+                BuscarGrupo();
+                break;
             case 3:
-                throw new NotImplementedException();
-
+                DeletarGrupo();
+                break;
+            case 4:
+                BuscarTodosGrupos();
+                break;
             default:
                 Console.WriteLine("Opção Invalida");
                 Console.ReadLine();
@@ -91,6 +128,22 @@ public class Program
         }
         return;
     }
+
+    private static void BuscarTodosGrupos()
+    {
+        throw new NotImplementedException();
+    }
+
+    private static void BuscarGrupo()
+    {
+        throw new NotImplementedException();
+    }
+
+    private static void DeletarGrupo()
+    {
+        throw new NotImplementedException();
+    }
+
     private static void USUARIOS()
     {
         int opcuser;
@@ -110,16 +163,16 @@ public class Program
                 CriarUsuario();
                 break;
 
-            case 2: 
-
+            case 2:
+                BuscarPorNomeUsuario();
                 break;
 
             case 3:
                 DeletarUsuario();
-                break ;
-                case 4:
+                break;
+            case 4:
                 BuscarTodosUsuarios();
-                    break;
+                break;
             case 0:
                 return;
             default:
@@ -130,23 +183,38 @@ public class Program
         return;
     }
 
+
+
+
+
+    private static void BuscarPorNomeUsuario()
+    {
+        return;
+    }
     private static void BuscarTodosUsuarios()
     {
-        UsuarioBLL usuarioBLL = new UsuarioBLL();
-        List<Usuario> usuarios = usuarioBLL.BuscarTodos();
-
-        foreach (Usuario item in usuarios)
+        try
         {
-            Console.WriteLine("Id: "+item.Id);
-            Console.WriteLine("NomeUsuario: "+item.NomeUsuario);
-            Console.WriteLine("Nome: "+item.Nome);
-            Console.WriteLine("Email: " + item.Email);
-            Console.WriteLine("Ativo: " + item.Ativo);
-            Console.WriteLine("CPF: " + item.CPF);
+            UsuarioBLL usuarioBLL = new UsuarioBLL();
+            List<Usuario> usuarios = usuarioBLL.BuscarTodos();
+
+            foreach (Usuario item in usuarios)
+            {
+                Console.WriteLine("Id: " + item.Id);
+                Console.WriteLine("NomeUsuario: " + item.NomeUsuario);
+                Console.WriteLine("Nome: " + item.Nome);
+                Console.WriteLine("Email: " + item.Email);
+                Console.WriteLine("Ativo: " + item.Ativo);
+                Console.WriteLine("CPF: " + item.CPF);
+            }
         }
-
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+        Console.ReadLine();
+        return;
     }
-
     private static void DeletarUsuario()
     {
         int id;
@@ -177,9 +245,8 @@ public class Program
         {
             cn.Close();
         }
-        return ;
+        return;
     }
-
     private static void CriarGrupoUsuario()
     {
         try
@@ -208,7 +275,6 @@ public class Program
         }
         return;
     }
-
     private static void CriarPermissao()
     {
         try
@@ -237,7 +303,6 @@ public class Program
         }
         return;
     }
-
     private static void CriarUsuario()
     {
         Console.Clear();
