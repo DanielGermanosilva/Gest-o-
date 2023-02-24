@@ -100,6 +100,7 @@ public class Program
         Console.WriteLine("[1] Criar Usuario");
         Console.WriteLine("[2] Buscar Usuario");
         Console.WriteLine("[3] Excluir Usuario");
+        Console.WriteLine("[4] Exibir Usuarios");
         Console.WriteLine("[0] Retornar MAIN");
         Console.Write("Escolha: ");
         opcuser = Convert.ToInt32(Console.ReadLine());
@@ -109,11 +110,16 @@ public class Program
                 CriarUsuario();
                 break;
 
-            case 2: throw new NotImplementedException();
+            case 2: 
+
+                break;
 
             case 3:
                 DeletarUsuario();
                 break ;
+                case 4:
+                BuscarTodosUsuarios();
+                    break;
             case 0:
                 return;
             default:
@@ -124,13 +130,22 @@ public class Program
         return;
     }
 
+    private static void BuscarTodosUsuarios()
+    {
+        UsuarioBLL usuarioBLL = new UsuarioBLL();
+        List<Usuario> usuarios = usuarioBLL.BuscarTodos();
 
+        foreach (Usuario item in usuarios)
+        {
+            Console.WriteLine("Id: "+item.Id);
+            Console.WriteLine("NomeUsuario: "+item.NomeUsuario);
+            Console.WriteLine("Nome: "+item.Nome);
+            Console.WriteLine("Email: " + item.Email);
+            Console.WriteLine("Ativo: " + item.Ativo);
+            Console.WriteLine("CPF: " + item.CPF);
+        }
 
-
-
-
-
-
+    }
 
     private static void DeletarUsuario()
     {
