@@ -51,32 +51,36 @@ public class Program
     private static void PERMISSAO()
     {
         int opcmain;
-        Console.Clear();
-        Console.WriteLine("=== Permissão ===");
-        Console.WriteLine("[1] Criar Permissão");
-        Console.WriteLine("[2] Buscar Permissão");
-        Console.WriteLine("[3] Excluir Permissão");
-        Console.WriteLine("[0] Retornar MAIN");
-        opcmain = Convert.ToInt32(Console.ReadLine());
-        switch (opcmain)
+        do
         {
-            case 1:
-                CriarPermissao();
-                break;
-            case 2:
-                BuscarPermissao();
-                break;
-            case 3:
-                DeletarPermissao();
-                break;
-            case 4:
-                BuscarTodasPermissao();
-                break;
-            default:
-                Console.WriteLine("Opção Invalida.");
-                Console.ReadLine();
-                break;
-        }
+            Console.Clear();
+            Console.WriteLine("=== Permissão ===");
+            Console.WriteLine("[1] Criar Permissão");
+            Console.WriteLine("[2] Buscar Permissão");
+            Console.WriteLine("[3] Excluir Permissão");
+            Console.WriteLine("[0] Retornar MAIN");
+            Console.Write("Escolha: ");
+            opcmain = Convert.ToInt32(Console.ReadLine());
+            switch (opcmain)
+            {
+                case 1:
+                    CriarPermissao();
+                    break;
+                case 2:
+                    BuscarPermissao();
+                    break;
+                case 3:
+                    DeletarPermissao();
+                    break;
+                case 4:
+                    BuscarTodasPermissao();
+                    break;
+                default:
+                    Console.WriteLine("Opção Invalida.");
+                    Console.ReadLine();
+                    break;
+            }
+        }while(opcmain != 0);
         return;
     }
 
@@ -98,34 +102,38 @@ public class Program
     private static void GRUPOUSUARIOS()
     {
         int opcgrupuser;
-        Console.Clear();
-        Console.WriteLine("=== Grupo De Usuarios ===");
-        Console.WriteLine("[1] Criar GrupoUSER");
-        Console.WriteLine("[2] Buscar GrupoUSER");
-        Console.WriteLine("[3] Excluir GrupoUSER");
-        Console.WriteLine("[4] Exibir GruposUSER");
-        Console.WriteLine("[0] Retornar MAIN");
-        Console.Write("Escolha: ");
-        opcgrupuser = Convert.ToInt32(Console.ReadLine());
-        switch (opcgrupuser)
+        do
         {
-            case 1:
-                CriarGrupoUsuario();
-                break;
-            case 2:
-                BuscarGrupo();
-                break;
-            case 3:
-                DeletarGrupo();
-                break;
-            case 4:
-                BuscarTodosGrupos();
-                break;
-            default:
-                Console.WriteLine("Opção Invalida");
-                Console.ReadLine();
-                break;
-        }
+            Console.Clear();
+            Console.WriteLine("=== Grupo De Usuarios ===");
+            Console.WriteLine("[1] Criar GrupoUSER");
+            Console.WriteLine("[2] Buscar GrupoUSER");
+            Console.WriteLine("[3] Excluir GrupoUSER");
+            Console.WriteLine("[4] Exibir GruposUSER");
+            Console.WriteLine("[0] Retornar MAIN");
+            Console.Write("Escolha: ");
+            opcgrupuser = Convert.ToInt32(Console.ReadLine());
+            switch (opcgrupuser)
+            {
+                case 1:
+                    CriarGrupoUsuario();
+                    break;
+                case 2:
+                    BuscarGrupo();
+                    break;
+                case 3:
+                    DeletarGrupo();
+                    break;
+                case 4:
+                    BuscarTodosGrupos();
+                    break;
+                default:
+                    Console.Clear();
+                    Console.WriteLine("Opção Invalida");
+                    Console.ReadLine();
+                    break;
+            }
+        } while (opcgrupuser != 0);
         return;
     }
 
@@ -147,39 +155,40 @@ public class Program
     private static void USUARIOS()
     {
         int opcuser;
-
-        Console.Clear();
-        Console.WriteLine("=== Usuarios ===");
-        Console.WriteLine("[1] Criar Usuario");
-        Console.WriteLine("[2] Buscar Usuario");
-        Console.WriteLine("[3] Excluir Usuario");
-        Console.WriteLine("[4] Exibir Usuarios");
-        Console.WriteLine("[0] Retornar MAIN");
-        Console.Write("Escolha: ");
-        opcuser = Convert.ToInt32(Console.ReadLine());
-        switch (opcuser)
+        do
         {
-            case 1:
-                CriarUsuario();
-                break;
-
-            case 2:
-                BuscarPorNomeUsuario();
-                break;
-
-            case 3:
-                DeletarUsuario();
-                break;
-            case 4:
-                BuscarTodosUsuarios();
-                break;
-            case 0:
-                return;
-            default:
-                Console.WriteLine("Opção Invalida");
-                Console.ReadLine();
-                break;
-        }
+            Console.Clear();
+            Console.WriteLine("=== Usuarios ===");
+            Console.WriteLine("[1] Criar Usuario");
+            Console.WriteLine("[2] Buscar Usuario");
+            Console.WriteLine("[3] Excluir Usuario");
+            Console.WriteLine("[4] Exibir Usuarios");
+            Console.WriteLine("[0] Retornar MAIN");
+            Console.Write("Escolha: ");
+            opcuser = Convert.ToInt32(Console.ReadLine());
+            switch (opcuser)
+            {
+                case 1:
+                    CriarUsuario();
+                    break;
+                case 2:
+                    BuscarPorNomeUsuario();
+                    break;
+                case 3:
+                    DeletarUsuario();
+                    break;
+                case 4:
+                    BuscarTodosUsuarios();
+                    break;
+                case 0:
+                    return;
+                default:
+                    Console.Clear();
+                    Console.WriteLine("Opção Invalida");
+                    Console.ReadLine();
+                    break;
+            }
+        }while(opcuser!=0);
         return;
     }
 
@@ -258,6 +267,7 @@ public class Program
             bool opc;
             do
             {
+                Console.Clear() ;
                 Console.Write("Nome do Grupo: ");
                 grupousuario.NomeGrupo = Console.ReadLine();
                 //  usuario.Nome = "Daniel Germano";
@@ -286,6 +296,7 @@ public class Program
             bool opc;
             do
             {
+                Console.Clear();
                 Console.Write("Descreva a Permissao: ");
                 permissao.Descricao = Console.ReadLine();
                 //  usuario.Nome = "Daniel Germano";
@@ -305,7 +316,7 @@ public class Program
     }
     private static void CriarUsuario()
     {
-        Console.Clear();
+        
         try
         {
             Usuario usuario = new Usuario();
@@ -315,7 +326,7 @@ public class Program
             bool opc;
             do
             {
-
+                Console.Clear();
                 Console.Write("Digite Seu Nome: ");
                 usuario.Nome = Console.ReadLine();
                 //  usuario.Nome = "Daniel Germano";
