@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace WindowsFormsAppPrincipal
 {
-    public partial class Form1 : Form
+    public partial class Gestao : Form
     {
-        public Form1()
+        public Gestao()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
