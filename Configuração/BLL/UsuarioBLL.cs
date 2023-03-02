@@ -1,5 +1,8 @@
 ﻿using DAL;
 using Models;
+using System;
+using System.Collections.Generic;
+
 namespace BLL
 {
     public class UsuarioBLL
