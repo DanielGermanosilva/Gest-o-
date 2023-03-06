@@ -1,4 +1,5 @@
 ﻿using System;
+using BLL;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,13 +18,10 @@ namespace WindowsFormsAppPrincipal
             InitializeComponent();
         }
 
-        private void usuarioDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void buttonBUSCAR_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void FormBuscarUsuario_Load(object sender, EventArgs e)
-        {
+            UsuarioBLL usuarioBLL = new UsuarioBLL();
+            usuarioBindingSource.DataSource = usuarioBLL.BuscarTodos();
 
         }
     }
